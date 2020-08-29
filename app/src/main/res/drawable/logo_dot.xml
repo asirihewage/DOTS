@@ -1,0 +1,65 @@
+<!--
+  ~ Copyright (C) 2020 Asiri H.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="1094dp"
+    android:height="308dp"
+    android:viewportWidth="1094"
+    android:viewportHeight="308">
+
+    <path
+        android:fillColor="@color/colorPrimaryDark"
+        android:pathData="M282 75.44c-29.36 5.42-52.62 22.82-62.66 51.56-2.84 8.14-4.33 14.34-4.34 23-0.02 13.93 0.05 21.66 5.45 35 10.89 26.88 38.97 48.65 68.55 49 15.9 0.18 27.46-0.98 42-8.27 44.9-22.5 57.02-83.04 25.71-121.72-18.06-22.31-46.58-32.18-74.71-28.57z" />
+    <path
+        android:fillColor="@color/colorPrimary"
+        android:pathData="M287 99.44c-19.55 3.61-35.55 13.54-43.54 32.56-14.1 33.58 5.81 71.81 42.54 77 5.59 0.79 8.24 1.4 14 0.57 12.03-1.72 21.52-5.17 31-13.03 24.3-20.16 24.5-59.33 2.91-81.5-11.67-11.99-30.47-17.71-46.91-15.6z" />
+    <path
+        android:fillColor="@color/colorAccent"
+        android:pathData="M289 123.25c-7.34 1.85-12.59 4.11-17.82 9.79-16.86 18.33-6.86 51.2 21.82 52.87 33.36 1.94 45.68-44.65 16-59.53-3.84-1.93-8.71-3.17-13-3.13-2.68-0.32-4.38-0.15-7 0z" />
+
+    <path android:fillColor="@color/colorAccent"
+        android:pathData="M3754 3300 c-73 -24 -149 -86 -175 -145 -22 -47 -24 -130 -7 -189 8
+-24 30 -58 55 -83 47 -45 100 -66 256 -102 149 -35 187 -67 187 -157 0 -42 -5
+-59 -26 -84 -45 -53 -78 -65 -184 -64 -107 1 -179 21 -256 74 -25 16 -47 30
+-50 30 -3 0 -4 -35 -2 -77 l3 -78 85 -29 c161 -54 337 -46 440 19 74 47 130
+144 130 225 0 50 -29 126 -62 159 -46 47 -87 65 -233 101 -71 17 -145 41 -164
+52 -60 38 -78 119 -38 179 61 92 222 103 378 27 35 -18 68 -34 72 -36 4 -2 7
+29 5 70 l-3 73 -70 23 c-101 34 -258 40 -341 12z"/>
+    <path android:fillColor="@color/colorAccent"
+        android:pathData="M1030 2841 l0 -461 158 0 c193 0 274 11 357 49 148 67 245 229 245
+407 0 221 -104 372 -303 437 -51 16 -97 21 -259 25 l-198 4 0 -461z m425 319
+c80 -30 155 -105 181 -181 26 -77 24 -215 -5 -290 -52 -135 -177 -199 -388
+-199 l-83 0 0 351 0 352 118 -5 c87 -4 132 -11 177 -28z"/>
+    <path android:fillColor="@color/colorAccent"
+        android:pathData="M2730 3245 l0 -55 160 0 160 0 0 -405 0 -405 65 0 65 0 0 405 0 405
+165 0 165 0 0 55 0 55 -390 0 -390 0 0 -55z"/>
+    <path android:fillColor="@color/colorAccent"
+        android:pathData="M2223 3256 c-229 -56 -385 -288 -344 -513 36 -195 183 -341 379 -375
+300 -51 574 219 524 515 -46 264 -302 435 -559 373z m235 -197 c103 -51 152
+-131 152 -246 0 -82 -22 -135 -77 -190 -55 -55 -105 -76 -190 -81 -60 -3 -80
+0 -125 20 -115 53 -168 132 -168 250 0 116 49 196 152 247 50 25 73 31 128 31
+55 0 78 -6 128 -31z"/>
+    <path android:fillColor="@color/colorAccent"
+        android:pathData="M3805 2041 c-67 -31 -115 -102 -115 -168 1 -42 33 -105 69 -136 86
+-72 204 -54 268 42 62 92 24 214 -82 262 -51 23 -89 23 -140 0z"/>
+    <path android:fillColor="@color/colorAccent"
+        android:pathData="M1215 2031 c-50 -22 -91 -69 -107 -122 -37 -126 96 -258 222 -220 96
+29 158 132 132 220 -16 53 -57 100 -107 122 -51 23 -89 23 -140 0z"/>
+    <path android:fillColor="@color/colorAccent"
+        android:pathData="M2932 2037 c-90 -18 -150 -117 -130 -212 32 -145 225 -186 315 -68
+35 46 43 133 18 187 -35 72 -118 111 -203 93z"/>
+
+</vector>
