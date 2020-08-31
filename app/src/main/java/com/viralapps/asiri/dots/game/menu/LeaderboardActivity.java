@@ -189,7 +189,7 @@ public class LeaderboardActivity extends Activity {
         // load image
         String imageUri = mUserSettings.getString("avatar", "");
         ImageView useravatar = findViewById(R.id.useravatar);
-        Picasso.with(mContext).load(imageUri).into(useravatar);
+        Picasso.get().load(imageUri).into(useravatar);
         TextView highesrmark = findViewById(R.id.highestMark);
         highesrmark.setText(dotsPerSecond + " Dots per second.");
 
