@@ -1,8 +1,5 @@
 # DOTS
 DOTS - Train your Brain. Android App
-   ![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
-
-   ![Test passing](https://img.shields.io/badge/Tests-passing-brightgreen.svg)
    
 ![aa](https://github.com/asirihewage/DOTS/blob/master/SCREENSHOTS/banner2.png)
 
@@ -24,7 +21,11 @@ DOTS RANK is the measurement of brain power. Using this application you can see 
 
 If you loved DOTS, please make a review with your latest score!
 
-*Dark mode is available*
+![aa](https://github.com/asirihewage/DOTS/blob/master/SCREENSHOTS/2.png)
+![aa](https://github.com/asirihewage/DOTS/blob/master/SCREENSHOTS/3.png)
+![aa](https://github.com/asirihewage/DOTS/blob/master/SCREENSHOTS/5.png)
+
+V2  ==  *Dark mode is available*
 We remain committed to making sure all players can enjoy our games. You can turn on Dark Mode to stop eye straining!
 
 ##  NOTE
@@ -35,6 +36,7 @@ Having any problems? Any suggestions? We would love to hear from you! You can re
 
 PLEASE NOTE: DOTS is completely free to play, but we serve few ads to cover maintenance cost since we do not charge from our users.
 
-![aa](https://github.com/asirihewage/DOTS/blob/master/SCREENSHOTS/2.png)
-![aa](https://github.com/asirihewage/DOTS/blob/master/SCREENSHOTS/3.png)
-![aa](https://github.com/asirihewage/DOTS/blob/master/SCREENSHOTS/5.png)
+   ![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
+
+
+   ![Test passing](https://img.shields.io/badge/Tests-passing-brightgreen.svg)
