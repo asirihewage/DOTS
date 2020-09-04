@@ -86,7 +86,6 @@ public class MainMenuActivity extends Activity {
     private String userID;
     private int mTextColor;
     private SharedPreferences mUserSettings;
-    private DatabaseReference devicesRef;
     DatabaseReference userRef;
     private String deviceID;
     private FirebaseAuth mAuth;
@@ -102,15 +101,8 @@ public class MainMenuActivity extends Activity {
         setContentView(R.layout.main_menu_activity);
         mContext = this;
 
-        AdView mAdView = new AdView(this);
-        mAdView.setAdUnitId("ca-app-pub-1300983540101573/7550736743");
-        mAdView.setAdSize(AdSize.BANNER);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        devicesRef = database.getReference("devices");
         userRef = database.getReference("users");
 
         mAuth = FirebaseAuth.getInstance();
@@ -122,23 +114,6 @@ public class MainMenuActivity extends Activity {
                 .build();
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
-//        // Read from the database
-//        devicesRef.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                // This method is called once with the initial value and again
-//                // whenever data at this location is updated.
-////                String value = dataSnapshot.getValue(String.class);
-////                Log.d(TAG, "Value is: " + value);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                // Failed to read value
-////                Log.w(TAG, "Failed to read value.", error.toException());
-//            }
-//        });
 
         enableImmersiveMode();
 
@@ -163,6 +138,10 @@ public class MainMenuActivity extends Activity {
         deviceID = mUserSettings.getString("deviceID", "");
         userID = mUserSettings.getString("userID", "");
         username = mUserSettings.getString("name", "");
+
+        SharedPreferences.Editor editor = mUserSettings.edit();
+        editor.putBoolean("ads_enabled", true);
+        editor.apply();
 
         leaderboard = findViewById(R.id.leaderboard);
 
@@ -265,7 +244,6 @@ public class MainMenuActivity extends Activity {
                 Snackbar.make(leaderboard,"Background music turned Off.", Snackbar.LENGTH_SHORT)
                         .show();
             }
-            SharedPreferences.Editor editor = mUserSettings.edit();
             editor.putBoolean("sound_on", mIsSoundOn);
             editor.apply();
         });
@@ -280,7 +258,6 @@ public class MainMenuActivity extends Activity {
                 assert vb != null;
                 vb.vibrate(15);
             }
-            SharedPreferences.Editor editor = mUserSettings.edit();
             editor.putBoolean("vibrate_on", mIsVibrateOn);
             editor.apply();
         });
@@ -289,7 +266,6 @@ public class MainMenuActivity extends Activity {
         mNightMode.setOnClickListener(v -> {
             mIsNightMode = !mIsNightMode;
             UserSettings.startClickSound(mContext);
-            SharedPreferences.Editor editor = mUserSettings.edit();
             editor.putBoolean("night_mode", mIsNightMode);
             editor.apply();
             updateColors();
@@ -357,16 +333,24 @@ public class MainMenuActivity extends Activity {
             mFastestScore1.setText(score1Text);
             mScore1Set = convertStringToIntArray(savedScores.getString("score1set", ""));
 
-            if(!deviceID.equals("")) {
+            if(!userID.equals("")) {
                 long tsLong = System.currentTimeMillis()/1000;
                 String timestamp = Long.toString(tsLong);
+                String userID = mUserSettings.getString("userID", "");
+
                 //save score firebase
                 Map<String, String> score = new HashMap<>();
                 score.put("totalTime", Double.toString(score1));
                 score.put("dotsPerSecond", Double.toString(rate1));
-                score.put("scoreSet", savedScores.getString("score1set", ""));
+                score.put("scoreSet", savedScores.getString("score1set", "[]"));
                 score.put("timestamp", timestamp);
-                devicesRef.child(deviceID).setValue(score);
+                score.put("deviceID", deviceID);
+                score.put("userID", mUserSettings.getString("userID", ""));
+                score.put("name", mUserSettings.getString("name", ""));
+                score.put("email", mUserSettings.getString("email", ""));
+                score.put("avatar", mUserSettings.getString("avatar", ""));
+
+                userRef.child(userID).setValue(score);
             }
 
             double score2 = savedScores.getInt("score2", 0) / 1000.0;
@@ -460,21 +444,11 @@ public class MainMenuActivity extends Activity {
 
     private void setUser(GoogleSignInAccount account){
         SharedPreferences.Editor editor = mUserSettings.edit();
-        //save score firebase
-        Map<String, String> score = new HashMap<>();
-        score.put("userID", account.getId());
-        score.put("name", account.getDisplayName());
-        score.put("email", account.getEmail());
-        score.put("avatar", Objects.requireNonNull(account.getPhotoUrl()).toString());
-
         editor.putString("userID", account.getId());
         editor.putString("name", account.getDisplayName());
         editor.putString("email", account.getEmail());
         editor.putString("avatar", account.getPhotoUrl().toString());
         editor.apply();
-
-        userRef.child(account.getId()).setValue(score);
-
     }
 
     private boolean checkUser(){
