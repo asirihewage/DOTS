@@ -1,5 +1,9 @@
 # DOTS
 DOTS - Train your Brain. Android App
+   ![build succeeded](https://img.shields.io/badge/build-succeeded-brightgreen.svg)
+
+   ![Test passing](https://img.shields.io/badge/Tests-passing-brightgreen.svg)
+   
 ![aa](https://github.com/asirihewage/DOTS/blob/master/SCREENSHOTS/banner2.png)
 
 This is a brain game where you can select DOTS as faster as possible to analyse the functionality of your brain. You can play Head-to-Head mode to compare with your friend.
